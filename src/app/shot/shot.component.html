@@ -1,0 +1,12 @@
+<div class="sm-box" data-ui-component="box-shot">
+  <picture>
+    <source srcset="{{ shot.image }}" media="(max-width: 768px)">
+    <source srcset="{{shot.image}}">
+    <img srcset="{{shot.image}}" alt="My default image">
+  </picture>
+  <div class="hover-box">
+    <h3>{{ shot.title }}</h3>
+    <p>{{ shot.description }}</p>
+    <span> {{ shot.published }} </span>
+  </div>
+</div>

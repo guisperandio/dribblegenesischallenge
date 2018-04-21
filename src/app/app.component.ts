@@ -1,3 +1,4 @@
+import { ShotsComponent } from './shots/shots.component';
 import { Component } from '@angular/core';
 
 @Component({
