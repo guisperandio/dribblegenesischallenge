@@ -1,3 +1,8 @@
-<div class="col-lg-3 col-md-4 col-sm-6" *ngFor="let shot of shots">
-  <app-shot [shot]="shot"></app-shot>
+<div class="row">
+  <div class="col-lg-4 col-md-4 col-sm-6" *ngFor="let shot of shots; let i = index">
+    <app-shot [shot]="shot" [id]="i" (shotOverlay)="onReceiveShot($event)"></app-shot>
+  </div>
 </div>
+
+<app-overlay [shotOverlay]="shotOverlay" *ngIf="displayOverlay" (displayOverlay)="getClose($event)" [user]="user"></app-overlay>
+

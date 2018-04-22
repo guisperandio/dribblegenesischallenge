@@ -1,7 +1,143 @@
 /* You can add global styles to this file, and also import other style files */
 
+@import url('https://fonts.googleapis.com/css?family=Ubuntu+Condensed');
+h1,
+h2,
+h3,
+h4,
+a,
+p,
+li,
+div,
+span {
+    font-family: 'Ubuntu Condensed', sans-serif;
+}
+
+@margin-default: 15px;
+@no-margin: 0;
+@darker-gray: #333;
+@default-gray: #999;
+@light-gray: #aeaeae;
+@text-featured: #3a8bbb;
+.align-absolute {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+}
+
 body {
     box-sizing: border-box;
     background-color: #fafafa !important;
     height: 100vh;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.8);
+    width: 100%;
+    height: 100%;
+}
+
+//Block definition bg-box
+.bg-box {
+    @media (min-width: 1200px) {
+        width: 600px;
+    }
+    width: 50%;
+    height: 79vh;
+    padding: 40px 80px;
+    background-color: #eaeaea;
+    border-radius: 3px;
+    z-index: 2;
+    position: absolute;
+    .align-absolute;
+    &__header {
+        margin-top: @margin-default;
+    }
+    &__avatar {
+        border-radius: 50px;
+        width: 50px;
+        height: 50px;
+        float: left;
+        margin-right: @margin-default;
+    }
+    &__title {
+        font-size: 22px;
+        font-weight: bold;
+        margin-bottom: @no-margin;
+    }
+    &__details {
+        color: @default-gray;
+    }
+    &__description {
+        margin-top: @margin-default;
+    }
+    &--featured {
+        color: @text-featured;
+    }
+    &--smoth {
+        color: @light-gray;
+    }
+}
+
+//Block definition sm-box
+.sm-box {
+    padding: 10px;
+    background-color: #fff;
+    -webkit-box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1);
+    margin: 10px 0;
+    border-radius: 3px;
+    border: 1px solid #fafafa;
+    position: relative;
+    color: @default-gray;
+    cursor: pointer; //element image definition
+    &__image {
+        width: 100%;
+    } //element info definition
+    &__info {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: 10px;
+        background: #fafafa;
+        margin: 10px;
+        opacity: 0;
+        transition: all 0.3s ease;
+    } //element title definition
+    &__title {
+        font-size: 14px;
+        &--dark {
+            color: #333;
+        }
+        &--bg {
+            font-size: 18px;
+        }
+    } //element content definition
+    &__content {
+        font-size: 12px;
+        &--bg {
+            font-size: 16px;
+        }
+    } //element published definition
+    &__published {
+        font-size: 11px;
+        position: absolute;
+        bottom: 10px;
+        &--bg {
+            font-size: 15px;
+        }
+    } //behavior definitions
+    &:hover {
+        .sm-box__info {
+            opacity: 1;
+        }
+    }
 }

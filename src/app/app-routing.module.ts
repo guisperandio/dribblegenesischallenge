@@ -1,11 +1,21 @@
+import { ShotsComponent } from './shots/shots.component';
 import { AppComponent } from './app.component';
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
   {
+    path: '',
+    component: ShotsComponent
+  },
+  {
     path: 'shots',
-    component: AppComponent
+    component: ShotsComponent
+  },
+  {
+    path: 'shot/:id',
+    redirectTo: '',
+    component: ShotsComponent
   }
 ];
 

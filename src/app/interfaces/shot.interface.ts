@@ -1,8 +1,12 @@
 export interface Shot {
   title: string;
   description: string;
-  published: string;
+  published_at: string;
   author: string;
   avatar: string;
-  image: string;
+  images: {
+    normal: string,
+    teaser: string
+  };
+  id: number;
 }

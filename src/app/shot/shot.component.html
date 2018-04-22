@@ -1,12 +1,12 @@
-<div class="sm-box" data-ui-component="box-shot">
-  <picture>
-    <source srcset="{{ shot.image }}" media="(max-width: 768px)">
-    <source srcset="{{shot.image}}">
-    <img srcset="{{shot.image}}" alt="My default image">
+<div class="sm-box" id="{{ id }}" data-ui-component="my-shot" (click)="onGetShot($event, shot)">
+  <picture class="sm-box__image">
+    <source class="sm-box__image" srcset="{{ shot.images.normal }}" media="(max-width: 768px)">
+    <source class="sm-box__image" srcset="{{shot.images.normal}}">
+    <img class="sm-box__image" srcset="{{shot.images.normal}}" alt="My default image">
   </picture>
-  <div class="hover-box">
-    <h3>{{ shot.title }}</h3>
-    <p>{{ shot.description }}</p>
-    <span> {{ shot.published }} </span>
+  <div class="sm-box__info">
+    <h3 class="sm-box__title sm-box__title--bg sm-box__title--dark">{{ shot.title }}</h3>
+    <p class="sm-box__content sm-box__content--bg">{{ shot.description }}</p>
+    <span class="sm-box__published sm-box__published--bg"> {{ shot.published_at | date }} </span>
   </div>
 </div>

@@ -1,0 +1,28 @@
+<div class="overlay" (click)="onClose()"><i class="fas fa-times"></i></div>
+<div class="bg-box">
+  
+  <div class="sm-box">
+    <picture class="sm-box__image">
+      <source class="sm-box__image" srcset="{{ shotOverlay.images.normal }}" media="(max-width: 768px)">
+      <source class="sm-box__image" srcset="{{shotOverlay.images.normal}}">
+      <img class="sm-box__image" srcset="{{shotOverlay.images.normal}}" alt="My default image">
+    </picture>
+  </div>
+  <div class="bg-box__header">
+    <picture class="bg-box__avatar">
+      <img class="bg-box__avatar" src="{{ user.avatar_url }}" alt="">
+    </picture>
+    <h2 class="bg-box__title">
+      {{ shotOverlay.title }}
+    </h2>
+    <span class="bg-box__details">
+      by
+      <span class="bg-box--featured">{{ user.name }}</span>
+      in Health App on
+      <span class="bg-box--smooth">{{ shotOverlay.published_at | date }}</span>
+    </span>
+  </div>
+  <p class="bg-box__description">
+    {{ shotOverlay.description }}
+  </p>
+</div>
