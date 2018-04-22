@@ -6,4 +6,5 @@ Code challenge - Guilherme Santos
 
 Clone the repo <br>
 npm install <br>
+npm install bootstrap --save<br>
 ng serve <br>
