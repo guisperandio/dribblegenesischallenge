@@ -17,10 +17,10 @@ export class ShotComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.shot.description = this.shot.description.replace('<p>', '');
-    this.shot.description = this.shot.description.replace('</p>', '');
+    this.shot.description = this.shot.description.replace(/<[^>]+>/g, '');
   }
-
+  
+  
   onGetShot(event, data) {
     this.shotOverlay.emit(data);
     this.location.replaceState(`/shot/${data.id}`);
